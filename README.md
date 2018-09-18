@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this repository, you will find some basic information about Tom, as well as an exploration of a dataset using R markdown [link here](https://www.google.com)
+In this repository, you will find some basic information about Tom, as well as an exploration of a dataset using R markdown [link here](https://github.com/STAT545-UBC-students/hw01-451error/blob/master/hw01_DataExploration.Rmd)
 
 <!--- add link to Rmd file after it is uploaded--->
 
