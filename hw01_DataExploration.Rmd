@@ -1,0 +1,53 @@
+---
+title: "Data Exploration"
+author: "Tom Peng"
+output:
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE,echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## **USArrests** Dataset
+
+The ``USArrests`` dataset is built-in to ``R`` and it has arrests per 100,000 residents for various crimes in the US states in 1973. For more details of the dataset, see the R Documentations page [here](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/USArrests.html)
+
+To help us have a better understanding of what the dataset looks like, the ``head`` and ``tail`` commands lets us see the first and last six rows of the data, respectively:
+
+```{r head}
+head(USArrests)
+```
+
+```{r tail}
+tail(USArrests)
+```
+
+``R`` has a built-in function ``summary`` which, as the function name suggests, shows us summary information on each column of the dataframe:
+
+```{r USArrests}
+summary(USArrests)
+```
+
+If we want to look at one column of the dataframe, we can use square brackets and the column name to extract it from the data:
+
+```{r column_extract}
+USArrests$Assault
+```
+
+We can also use ``R`` functions to find, for example, which state has the highest murder rate:
+
+```{r highest_murder}
+row.names(USArrests[which(USArrests["Murder"]==max(USArrests["Murder"])),])
+```
+
+## Visualization
+
+We can plot the dataset to visualize the data. The `UrbanPop` column was removed from the plot so we can compare the different arrest rates.
+
+```{r pressure, echo=FALSE}
+plot(cbind(USArrests[1:2],USArrests[4]))
+```
+
+<!---Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.--->
